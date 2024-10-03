@@ -1,0 +1,40 @@
+{
+  "name": "lecture20",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.13.0",
+    "@mantine/hooks": "^7.13.0",
+    "@prisma/client": "^5.20.0",
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "lowdb": "^7.0.1",
+    "nanostores": "^0.11.3",
+    "next": "14.2.13",
+    "react": "^18",
+    "react-dom": "^18",
+    "sleep-promise": "^9.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@nanostores/react": "^0.8.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/lodash": "^4.17.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.13",
+    "prisma": "^5.20.0",
+    "typescript": "^5"
+  }
+}

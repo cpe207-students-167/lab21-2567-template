@@ -1,0 +1,26 @@
+[
+  {
+    "username": "user1",
+    "password": "$2a$12$7FtHF7AMxOM22CswdaOGC.Fk5Ps70qdonb6IltdbvQxbkjHBW76Cy",
+    "studentId": "650610001",
+    "role": "STUDENT"
+  },
+  {
+    "username": "user2",
+    "password": "$2a$12$vOLfbveE.deopFnzc5fxz.4u5NenVsR.PzRgYZJL1TfJZHCpR61xa",
+    "studentId": "650610002",
+    "role": "STUDENT"
+  },
+  {
+    "username": "user3",
+    "password": "$2a$12$xXxB75GMg2avBEWjVbUdH.7qqQZhSAqlyXjuKgYEdf0R7KXWQLNKG",
+    "studentId": "650610003",
+    "role": "STUDENT"
+  },
+  {
+    "username": "user4",
+    "password": "$2a$12$dy5V3ihtIDNhzMFHbJ.tXO1jSfMy.mZ8V67N8onEjAqtGXVFqoIV2",
+    "studentId": null,
+    "role": "ADMIN"
+  }
+]

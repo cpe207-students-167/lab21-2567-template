@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// define Course model
+model Course {
+  // id is mapped to _id and managed by mongodb
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  courseNo    String       @unique
+  title       String       @unique
+
+  // add relation between Course and Enrollment
+  // one Course can be in many Enrollments > 1:Many
+  enrollments Enrollment[]
+
+  // collection name
+  @@map("courses")
+}
+
+model Student {
+    id        String  @id @default(auto()) @map("_id") @db.ObjectId
+    studentId String  @unique
+    firstName String
+    lastName  String
+    program   Program
+
+    // add relation between Student and Enrollment
+    // one Student can be in many Enrollments > 1:Many
+    enrollments Enrollment[]
+
+    @@map("students")
+}
+
+enum Program {
+    CPE
+    ISNE
+}
+
+model Enrollment {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    courseNo  String
+    studentId String
+
+    // add this relation later
+    // link "Enrollment>courseNo" to "Course>courseNo"
+    // one Enrollment needs one Course
+    course Course @relation(fields: [courseNo], references: [courseNo])
+
+    // link "Enrollment>studentId" to "Student>studentId"
+    // one Enrollment needs one Student
+    student Student @relation(fields: [studentId], references: [studentId])
+
+    // collection name
+    @@map("enrollments")
+
+    @@unique([courseNo, studentId])
+ 
+}
+
+    
+
+model User {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    username  String  @unique
+    password  String
+    studentId String?
+    role      Role
+
+    @@map("users")
+}
+
+enum Role {
+    STUDENT
+    ADMIN
+}
